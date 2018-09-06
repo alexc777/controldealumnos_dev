@@ -18,3 +18,11 @@ Route::get('/', function () {
 Route::get('/cursos', function () {
     return view('admin.cursos.cursos');
 });
+
+Route::get('/catedraticos', function () {
+    return view('admin.catedraticos.catedraticos');
+});
+
+Route::get('/fichas', function () {
+    return view('admin.ficha.fichaalumno');
+});

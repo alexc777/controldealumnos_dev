@@ -10,11 +10,11 @@
             </li>
 
             <li>
-                <a href="{{ URL::to('/') }}">Ficha de alumno</a>
+                <a href="{{ URL::to('/catedraticos') }}">Catedraticos</a>
             </li>
 
             <li>
-                <a href="{{ URL::to('/') }}">Asignación de cursos</a>
+                <a href="{{ URL::to('/fichas') }}">Ficha de alumno</a>
             </li>
         </ul>
     </div>

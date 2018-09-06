@@ -1,7 +1,7 @@
 app.controller('HomeCtrl', function ($scope, $http, $timeout, $log) {
 
     /**
-   * Sección de Modal Ayuda
+   * Crear alumno
    **/
     $scope.fondoModal = false;
     $scope.nuevoAlumno = false;
@@ -25,6 +25,25 @@ app.controller('HomeCtrl', function ($scope, $http, $timeout, $log) {
         { nombre: 'Activo', id: '1' },
         { nombre: 'Inactivo', id: '2' }
     ];
+
+
+    /**
+     *
+     * Editar alumno
+     *
+     */
+
+    $scope.editAlumno = false;
+
+    $scope.editarAlumno = function () {
+        $scope.fondoModal = !$scope.fondoModal;
+        $scope.editAlumno = !$scope.editAlumno;
+    };
+
+    $scope.cerrarEditalumno = function () {
+        $scope.fondoModal = !$scope.fondoModal;
+        $scope.editAlumno = !$scope.editAlumno;
+    }
 
 
     /**
