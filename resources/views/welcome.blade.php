@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('components.app')
 @section('content')
 
-@include('layouts.menulateral')
+@include('components.menulateral')
 
 <div class="areacontenido col-lg-g" ng-controller="HomeCtrl" ng-cloak>
     <div class="container">
