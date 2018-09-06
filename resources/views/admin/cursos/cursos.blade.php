@@ -141,7 +141,7 @@
 
     <div class="container">
         <div class="container_cabecera">
-            <h1>Listado de Alumnos</h1>
+            <h1>Listado de Cursos</h1>
 
             <div class="btn_options">
                 <button class="btn btn_nuevoalumno" ng-click="crearAlumno()">Nuevo Alumno</button>

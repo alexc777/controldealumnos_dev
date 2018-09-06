@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cursos', function () {
+    return view('admin.cursos.cursos');
+});

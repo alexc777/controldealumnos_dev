@@ -2,19 +2,19 @@
     <div class="menulateral spd spi col-lg-m" ng-controller="MenulateralCtrl" ng-cloak>
         <ul>
             <li>
-                <a href="{{ URL::to('/') }}" class="icovescritorio">Listado de alumnos</a>
+                <a href="{{ URL::to('/') }}">Listado de alumnos</a>
             </li>
 
             <li>
-                <a href="{{ URL::to('/') }}" class="icovescritorio">Asignación de cursos</a>
+                <a href="{{ URL::to('/cursos') }}">Cursos</a>
             </li>
 
             <li>
-                <a href="{{ URL::to('/') }}" class="icovescritorio">Cursos</a>
+                <a href="{{ URL::to('/') }}">Ficha de alumno</a>
             </li>
 
             <li>
-                <a href="{{ URL::to('/') }}" class="icovescritorio">Ficha de alumno</a>
+                <a href="{{ URL::to('/') }}">Asignación de cursos</a>
             </li>
         </ul>
     </div>
