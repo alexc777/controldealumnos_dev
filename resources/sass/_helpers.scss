@@ -1,0 +1,37 @@
+.areacontenido{
+    float: right;
+    position: relative;
+    min-height: 100%;
+    background: #f9f9f9;
+    top:0;
+    padding-top: 15px;
+}
+
+ @media (min-width: 992px){
+  .areacontenido{
+    float: right;
+    min-height: 100%;
+      background: #f9f9f9;
+
+    .container{
+      width: 100% !important;
+    }
+  }
+}
+
+@media (min-width: 1200px){
+    .areacontenido{
+        float: right;
+        min-height: 100%;
+        overflow: hidden;
+        background: #f9f9f9;
+    }
+
+    .col-lg-m{
+        width: 13%;
+    }
+
+    .col-lg-g{
+        width: 87%;
+    }
+ }

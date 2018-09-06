@@ -6,18 +6,5 @@ var app= angular.module('app', [
   'ngResource',
   'ngSanitize',
   'ui.bootstrap',
-  'angularMoment',
-  'nya.bootstrap.select',
-  'highcharts-ng',
-  'infinite-scroll',
-  'ngclipboard',
-  'ngPrint',
-  'ngMask'
+  'angularMoment'
 ]);
-
-app.config(function ($locationProvider) {
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
-  });
-});
