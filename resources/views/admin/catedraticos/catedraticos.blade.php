@@ -16,7 +16,7 @@
 
             <div class="form_registro">
                 <div class="form_container">
-                    <form class="form_alumno" name="frm" ng-submit="guardarAlumno()">
+                    <form class="form_alumno" name="frm" ng-submit="guardarCatedratico()">
                         <div class="form-group col-sm-12 spd spi">
                             <input type="text" class="form-control" name="nombre" placeholder="Nombre del Catedratico" ng-model="catedratico.nombre">
                         </div>
@@ -54,13 +54,13 @@
     {{-- Editar catedratico --}}
         <div id="modalAyuda" ng-if="editarCatedratico">
             <div class="head_ayuda">
-                <p>Editar Catedratico Alejandro</p>
+                <p>Información Catedratico @{{existeCatedratico.nombre}}</p>
                 <div class="icocerrarc" ng-click="cerrarEditcate()">X</div>
             </div>
 
             <div class="form_registro">
                 <div class="form_container">
-                    <form class="form_alumno" name="frm" ng-submit="guardarAlumno()">
+                    <form class="form_alumno" name="frm" ng-submit="actualizarCatedratico()">
                         <div class="form-group col-sm-12 spd spi">
                             <input type="text" class="form-control" name="nombre" placeholder="Nombre del Catedratico" ng-model="catedratico.nombre">
                         </div>
@@ -155,8 +155,8 @@
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
                         <th scope="col">Fecha nacio</th>
-                        <th scope="col">No. Identificación</th>
                         <th scope="col">Teléfono</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Opciones</th>
@@ -164,17 +164,17 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Alejandro Sanchez</td>
-                        <td>07/09/1998</td>
-                        <td>44258949</td>
-                        <td>44258949</td>
-                        <td>asanchez@b2b.com</td>
+                    <tr ng-repeat="catedratico in catedraticos">
+                        <td>@{{catedratico.nombre}}</td>
+                        <td>@{{catedratico.apellido}}</td>
+                        <td>@{{catedratico.fecha_nacimiento}}</td>
+                        <td>@{{catedratico.telefono}}</td>
+                        <td>@{{catedratico.email}}</td>
                         <td>
                             <div class="cont_btnoptions">
                                 <button type="button" class="btn btn-outline-dark" ng-click="asignarCurso()">Notas</button>
-                                <button type="button" class="btn btn-outline-info" ng-click="editarCate()">Editar</button>
-                                <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                                <button type="button" class="btn btn-outline-info" ng-click="editarCate(catedratico)">Editar</button>
+                                <button type="button" class="btn btn-outline-danger" ng-click="btn_eliminar(catedratico.id)">Eliminar</button>
                             </div>
                         </td>
                     </tr>

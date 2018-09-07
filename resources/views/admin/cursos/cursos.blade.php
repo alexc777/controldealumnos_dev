@@ -65,7 +65,7 @@
 
             <div class="form_registro">
                 <div class="form_container">
-                    <form class="form_alumno" name="frm" ng-submit="guardarCurso()">
+                    <form class="form_alumno" name="frm" ng-submit="actualizarCurso()">
                         <div class="form-group col-sm-12 spd spi">
                             <input type="text" class="form-control" name="nombre" placeholder="Nombre del Curso" ng-model="curso.nombre">
                         </div>
@@ -124,14 +124,14 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Software |</td>
-                        <td>José López</td>
-                        <td>Computo</td>
+                    <tr ng-repeat="curso in cursos">
+                        <td>@{{curso.nombre_curso}}</td>
+                        <td>@{{curso.id_catedratico}}</td>
+                        <td>@{{curso.id_tipo}}</td>
                         <td>
                             <div class="cont_btnoptions">
-                                <button type="button" class="btn btn-outline-info" ng-click="editarCurso()">Editar</button>
-                                <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                                <button type="button" class="btn btn-outline-info" ng-click="editarCurso(curso)">Editar</button>
+                                <button type="button" class="btn btn-outline-danger" ng-click="btn_eliminar(curso.id)">Eliminar</button>
                             </div>
                         </td>
                     </tr>
