@@ -116,7 +116,7 @@
     {{-- Editar alumno --}}
         <div id="modalAyuda" ng-if="editAlumno">
             <div class="head_ayuda">
-                <p>Editar Alumno Alejandro</p>
+                <p>Editar Alumno @{{existeAlumno.nombre}}</p>
                 <div class="icocerrarc" ng-click="cerrarEditalumno()">X</div>
             </div>
 
@@ -126,22 +126,22 @@
                     <form class="form_alumno" name="frm" ng-submit="actualizarAlumno(alumno)">
 
                       <div class="form-group col-sm-12 spd spi">
-                          <input type="text" class="form-control" name="nombre" placeholder="Nombre del Alumno" ng-model="alumno.nombre">
+                          <input type="text" class="form-control" name="nombre" placeholder="Nombre del Alumno" ng-model="existeAlumno.nombre">
                       </div>
 
                       <div class="form-group col-sm-12 spd spi">
-                          <input type="text" class="form-control" name="apellido" placeholder="Apellido del Alumno" ng-model="alumno.apellido">
+                          <input type="text" class="form-control" name="apellido" placeholder="Apellido del Alumno" ng-model="existeAlumno.apellido">
                       </div>
 
                       <div class="form-group col-sm-12 spd spi">
                           <label>Fecha Nacimiento</label>
-                          <input type="date" class="form-control" name="fecha_nacio" ng-model="alumno.fecha_nacio">
+                          <input type="date" class="form-control" name="fecha_nacio" ng-model="existeAlumno.fecha_nacimiento">
                       </div>
 
                       <div class="form-group">
                           <select class="custom-select"
                                   name="grado"
-                                  ng-model="alumno.grado">
+                                  ng-model="existeAlumno.grado">
                               <option selected disabled value="">Facultad</option>
                               <option ng-repeat="grado in grados" value="@{{grado.id}}">
                                   @{{grado.nombre}}
@@ -152,7 +152,7 @@
                       <div class="form-group">
                           <select class="custom-select"
                                   name="selectSexo"
-                                  ng-model="alumno.selectSexo">
+                                  ng-model="existeAlumno.selectSexo">
                               <option selected disabled value="">Tipo Sexo</option>
                               <option ng-repeat="tsexo in sexo" value="@{{tsexo.id}}">
                                   @{{tsexo.nombre}}
@@ -161,17 +161,17 @@
                       </div>
 
                       <div class="form-group col-sm-12 spd spi">
-                          <input type="text" class="form-control" name="lugarcio" placeholder="Lugar de nacimiento" ng-model="alumno.lugarcio">
+                          <input type="text" class="form-control" name="lugarcio" placeholder="Lugar de nacimiento" ng-model="existeAlumno.lugar_nacimiento">
                       </div>
 
                       <div class="form-group col-sm-12 spd spi">
-                          <input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad del alumno" ng-model="alumno.nacionalidad">
+                          <input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad del alumno" ng-model="existeAlumno.nacionalidad">
                       </div>
 
                       <div class="form-group">
                           <select class="custom-select"
                                   name="estadoc"
-                                  ng-model="alumno.estadoc">
+                                  ng-model="existeAlumno.estadoc">
                               <option selected disabled value="">Estado Civil</option>
                               <option ng-repeat="civil in civiles" value="@{{civil.id}}">
                                   @{{civil.nombre}}
@@ -183,7 +183,7 @@
                       <div class="form-group col-sm-12 spd spi">
                           <select class="custom-select"
                                   name="estado"
-                                  ng-model="alumno.estado">
+                                  ng-model="existeAlumno.estado">
                               <option selected disabled value="">Estado alumno</option>
                               <option ng-repeat="estado in estados" value="@{{estado.id}}">
                                   @{{estado.nombre}}
@@ -192,20 +192,20 @@
                       </div>
 
                       <div class="form-group col-sm-12 spd spi">
-                          <input type="number" class="form-control" name="telefono" placeholder="Teléfono del alumno" ng-model="alumno.telefono">
+                          <input type="number" class="form-control" name="telefono" placeholder="Teléfono del alumno" ng-model="existeAlumno.telefono">
                       </div>
 
                       <div class="form-group col-sm-12 spd spi">
-                          <input type="email" class="form-control" name="email" placeholder="E-mail del alumno" ng-model="alumno.email">
+                          <input type="email" class="form-control" name="email" placeholder="E-mail del alumno" ng-model="existeAlumno.email">
                       </div>
 
                       <div class="form-group col-sm-12 spd spi">
                           <label>Fecha Ingreso</label>
-                          <input type="date" class="form-control" name="fecha_ingreso" ng-model="alumno.fecha_ingreso">
+                          <input type="date" class="form-control" name="fecha_ingreso" ng-model="existeAlumno.fecha_ingreso">
                       </div>
 
                       <div class="form-group col-sm-12 spd spi">
-                          <input type="password" class="form-control" name="clave" placeholder="Contraseña del alumno" ng-model="alumno.clave">
+                          <input type="password" class="form-control" name="clave" placeholder="Contraseña del alumno" ng-model="existeAlumno.contrasena">
                       </div>
 
                         <div class="col-sm-12 col-xs-12 mtop">

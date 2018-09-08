@@ -73,7 +73,7 @@ app.controller('CursosCtrl', function ($scope, $http, $timeout, $log) {
     $scope.actualizarCurso = function() {
 
       var data = {
-        nombre_curso: $scope.curso.nombre,
+          nombre_curso: $scope.existeCurso.nombre_curso,
         id_catedratico: $scope.curso.catedratico,
         id_tipo: $scope.curso.tipo
       };
@@ -111,6 +111,8 @@ app.controller('CursosCtrl', function ($scope, $http, $timeout, $log) {
         $scope.fondoModal = !$scope.fondoModal;
         $scope.editCurso = !$scope.editCurso;
         $scope.existeCurso = curso;
+        console.log($scope.existeCurso);
+
     };
 
     $scope.cerrarEditcurso = function () {

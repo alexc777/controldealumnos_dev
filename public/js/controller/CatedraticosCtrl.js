@@ -59,12 +59,12 @@ app.controller('CatedraticosCtrl', function($scope, $http, $timeout, $log) {
     $scope.actualizarCatedratico = function() {
 
       var data = {
-        nombre: $scope.catedratico.nombre,
-        apellido: $scope.catedratico.apellido,
-        fecha_nacimiento: $scope.catedratico.fecha_nacio,
-        telefono: $scope.catedratico.telefono,
-        email: $scope.catedratico.email,
-        contrasena: $scope.catedratico.clave
+        nombre: $scope.existeCatedratico.nombre,
+        apellido: $scope.existeCatedratico.apellido,
+        fecha_nacimiento: $scope.existeCatedratico.fecha_nacio,
+        telefono: $scope.existeCatedratico.telefono,
+        email: $scope.existeCatedratico.email,
+        contrasena: $scope.existeCatedratico.contrasena
       };
 
       $http.put('/catedratico/' + $scope.existeCatedratico.id, data)
