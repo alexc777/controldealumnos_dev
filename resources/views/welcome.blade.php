@@ -246,6 +246,14 @@
                     </form>
                 </div>
             </div>
+
+            <div class="container_listadoCursoasig">
+                <p>Listado de Cursos Asignados</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                </ul>
+            </div>
         </div>
     {{-- fin Asignar Curso --}}
 

@@ -10633,7 +10633,6 @@ a.text-dark:focus {
 .form_registro {
   float: left;
   width: 100%;
-  height: calc(100% - 15%);
   overflow: auto;
 }
 
@@ -10956,5 +10955,24 @@ a.text-dark:focus {
 
 .container_dash .cont_btnoptions button {
   margin: 0 5px;
+}
+
+.container_listadoCursoasig {
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+  border-top: 1px solid #000;
+}
+
+.container_listadoCursoasig p {
+  float: left;
+  width: 100%;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.container_listadoCursoasig ul {
+  float: left;
+  width: 100%;
 }
 
