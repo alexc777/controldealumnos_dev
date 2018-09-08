@@ -58,7 +58,7 @@
     {{-- Editar curso --}}
         <div id="modalAyuda" ng-if="editCurso">
             <div class="head_ayuda">
-                <p>Editar curso Software</p>
+                <p>Editar curso @{{existeCurso.nombre_curso}}</p>
                 <div class="icocerrarc" ng-click="cerrarEditcurso()">X</div>
             </div>
 
@@ -67,7 +67,7 @@
                 <div class="form_container">
                     <form class="form_alumno" name="frm" ng-submit="actualizarCurso()">
                         <div class="form-group col-sm-12 spd spi">
-                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del Curso" ng-model="curso.nombre">
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del Curso" ng-model="existeCurso.nombre_curso">
                         </div>
 
                         <div class="form-group">

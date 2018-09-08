@@ -62,28 +62,28 @@
                 <div class="form_container">
                     <form class="form_alumno" name="frm" ng-submit="actualizarCatedratico()">
                         <div class="form-group col-sm-12 spd spi">
-                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del Catedratico" ng-model="catedratico.nombre">
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del Catedratico" ng-model="existeCatedratico.nombre">
                         </div>
 
                         <div class="form-group col-sm-12 spd spi">
-                            <input type="text" class="form-control" name="apellido" placeholder="Apellido del Catedratico" ng-model="catedratico.apellido">
+                            <input type="text" class="form-control" name="apellido" placeholder="Apellido del Catedratico" ng-model="existeCatedratico.apellido">
                         </div>
 
                         <div class="form-group col-sm-12 spd spi">
                             <label>Fecha Nacimiento</label>
-                            <input type="date" class="form-control" name="fecha_nacio" ng-model="catedratico.fecha_nacio">
+                            <input type="date" class="form-control" name="fecha_nacio" ng-model="existeCatedratico.fecha_nacio">
                         </div>
 
                         <div class="form-group col-sm-12 spd spi">
-                            <input type="number" class="form-control" name="telefono" placeholder="Teléfono del Catedratico" ng-model="catedratico.telefono">
+                            <input type="number" class="form-control" name="telefono" placeholder="Teléfono del Catedratico" ng-model="existeCatedratico.telefono">
                         </div>
 
                         <div class="form-group col-sm-12 spd spi">
-                            <input type="email" class="form-control" name="email" placeholder="E-mail del Catedratico" ng-model="catedratico.email">
+                            <input type="email" class="form-control" name="email" placeholder="E-mail del Catedratico" ng-model="existeCatedratico.email">
                         </div>
 
                         <div class="form-group col-sm-12 spd spi">
-                            <input type="password" class="form-control" name="clave" placeholder="Contraseña del Catedratico" ng-model="catedratico.clave">
+                            <input type="password" class="form-control" name="clave" placeholder="Contraseña del Catedratico" ng-model="existeCatedratico.contrasena">
                         </div>
 
                         <div class="col-sm-12 col-xs-12 mtop">

@@ -137,19 +137,19 @@ app.controller('HomeCtrl', function($scope, $http, $timeout, $log) {
     $scope.actualizarAlumno = function() {
 
       var data = {
-          nombre: $scope.alumno.nombre,
-          apellido: $scope.alumno.apellido,
-          fecha_nacimiento: $scope.alumno.fecha_nacio,
-          grado_alumno: $scope.alumno.grado,
-          tipo_sexo: $scope.alumno.selectSexo,
-          lugar_nacimiento: $scope.alumno.lugarcio,
-          nacionalidad: $scope.alumno.nacionalidad,
-          estado_civil: $scope.alumno.estado,
-          estado: $scope.alumno.estado,
-          telefono: $scope.alumno.telefono,
-          email: $scope.alumno.email,
-          fecha_ingreso: $scope.alumno.fecha_ingreso,
-          contrasena: $scope.alumno.clave
+          nombre: $scope.existeAlumno.nombre,
+          apellido: $scope.existeAlumno.apellido,
+          fecha_nacimiento: $scope.existeAlumno.fecha_nacio,
+          grado_alumno: $scope.existeAlumno.grado,
+          tipo_sexo: $scope.existeAlumno.selectSexo,
+          lugar_nacimiento: $scope.existeAlumno.lugar_nacimiento,
+          nacionalidad: $scope.existeAlumno.nacionalidad,
+          estado_civil: $scope.existeAlumno.estado,
+          estado: $scope.existeAlumno.estado,
+          telefono: $scope.existeAlumno.telefono,
+          email: $scope.existeAlumno.email,
+          fecha_ingreso: $scope.existeAlumno.fecha_ingreso,
+          contrasena: $scope.existeAlumno.contrasena
       };
 
       $http.put('/alumno/' + $scope.existeAlumno.id, data)
@@ -220,6 +220,8 @@ app.controller('HomeCtrl', function($scope, $http, $timeout, $log) {
         $scope.fondoModal = !$scope.fondoModal;
         $scope.editAlumno = !$scope.editAlumno;
         $scope.existeAlumno = alumno;
+        console.log($scope.existeAlumno);
+
     };
 
     $scope.cerrarEditalumno = function() {
