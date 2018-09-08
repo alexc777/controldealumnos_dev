@@ -220,7 +220,7 @@
     {{-- Asignar Curso --}}
         <div id="modalAyuda" ng-if="verCurso">
             <div class="head_ayuda">
-                <p>Asignar Curso a Alejandro</p>
+                <p>Asignar Curso</p>
                 <div class="icocerrarc" ng-click="cerrarCurso()">X</div>
             </div>
 
@@ -235,7 +235,7 @@
                                     ng-model="curso.cursonombre">
                                 <option selected disabled value="">Seleccione el curso</option>
                                 <option ng-repeat="curso in cursos" value="@{{curso.id}}">
-                                    @{{curso.nombre}}
+                                    @{{curso.nombre_curso}}
                                 </option>
                             </select>
                         </div>
@@ -249,9 +249,8 @@
 
             <div class="container_listadoCursoasig">
                 <p>Listado de Cursos Asignados</p>
-                <ul class="list-group">
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                <ul class="list-group" ng-repeat="cursoasing in cursosasing">
+                    <li class="list-group-item">@{{cursoasing.nombre_curso.nombre_curso}}</li>
                 </ul>
             </div>
         </div>

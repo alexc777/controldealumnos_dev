@@ -119,6 +119,20 @@ app.controller('HomeCtrl', function($scope, $http, $timeout, $log) {
     }
     $scope.get_alumnos();
 
+    // Todos los alumnos
+    $scope.get_cursos = function() {
+        $http.get('/cursosl').success(
+
+            function(cursos) {
+                $scope.cursos = cursos.datos;
+                console.log($scope.cursos);
+            }).error(function(error) {
+            $scope.error = error;
+        });
+    }
+    $scope.get_cursos();
+
+
 
     $scope.actualizarAlumno = function() {
 
@@ -233,6 +247,7 @@ app.controller('HomeCtrl', function($scope, $http, $timeout, $log) {
 
                 function(cursosasing) {
                     $scope.cursosasing = cursosasing.datos;
+                    console.log(cursosasing);
                 }).error(function(error) {
                 $scope.error = error;
             });
@@ -260,18 +275,5 @@ app.controller('HomeCtrl', function($scope, $http, $timeout, $log) {
         }
     ];
 
-    $scope.cursos = [{
-            nombre: 'Mátematicas',
-            id: '1'
-        },
-        {
-            nombre: 'Software',
-            id: '2'
-        },
-        {
-            nombre: 'Razón y Fé',
-            id: '3'
-        }
-    ];
 
 });

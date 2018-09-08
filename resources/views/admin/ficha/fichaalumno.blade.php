@@ -7,7 +7,7 @@
     <div class="caja_modal" ng-if="mas_obj">
         <div id="area_masID">
             <div class="header_area">
-                <h1>Ficha detallada del alumno Alejandro</h1>
+                <h1>Ficha Alumno</h1>
                 <div class="areacerrar">
                     <a ng-click="cerrar_masID()" class="icocerrar">X</a>
                 </div>
@@ -26,10 +26,10 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td>Software</td>
-                                    <td>80</td>
-                                    <td>José López</td>
+                                <tr ng-repeat="cursoap in cursosap">
+                                    <td>@{{cursoap.nombre_curso.nombre_curso}}</td>
+                                    <td>@{{cursoap.nota}}</td>
+                                    <td>@{{cursoap.nombre_catedratico.nombre}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -49,18 +49,20 @@
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Código</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Facultad</th>
                         <th scope="col">Opciones</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Alejandro Sanchez</td>
-                        <td>1804002004</td>
+                    <tr ng-repeat="alumno in alumnos">
+                        <td>@{{alumno.nombre}}</td>
+                        <td>@{{alumno.apellido}}</td>
+                        <td>@{{alumno.grado_alumno}}</td>
                         <td>
                             <div class="cont_btnoptions">
-                                <button type="button" class="btn btn-outline-dark" ng-click="verFicha()">Detalles</button>
+                                <button type="button" class="btn btn-outline-dark" ng-click="verFicha(alumno)">Detalles</button>
                             </div>
                         </td>
                     </tr>

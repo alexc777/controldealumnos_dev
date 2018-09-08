@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Catedraticos;
+use App\Models\NotasCursoAlumno;
 
 class CatedraticosController extends Controller
 {
@@ -38,6 +39,25 @@ class CatedraticosController extends Controller
     ]);
 
     $alumnos->save();
+
+  }
+
+  public function storenotas(Request $request){
+
+    $id_alumno = $request['id_alumno'];
+    $id_curso = $request['id_curso'];
+    $nota = $request['nota'];
+    $id_catedratico = $request['id_catedratico'];
+
+
+    $notasalum=NotasCursoAlumno::create([
+      'id_alumno' => $id_alumno,
+      'id_curso' => $id_curso,
+      'nota' => $nota,
+      'id_catedratico' => $id_catedratico,
+    ]);
+
+    $notasalum->save();
 
   }
 

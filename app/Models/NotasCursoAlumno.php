@@ -27,4 +27,14 @@ class NotasCursoAlumno extends Model
         * @var array
         */
         protected $hidden = ['updated_at'];
+
+        public function NombreCurso(){
+
+          return $this->hasOne('\App\Models\Cursos','id','id_curso');
+        }
+
+        public function NombreCatedratico(){
+
+          return $this->hasOne('\App\Models\Catedraticos','id','id_catedratico');
+        }
 }

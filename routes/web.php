@@ -21,11 +21,10 @@ Route::get('/cursos', function () {
 });
 Route::post('/curso/create', 'CursosController@store');
 Route::get('/cursosl', 'CursosController@indexcursos');
+Route::get('/cursosalum/{id}', 'CursosController@indexcursosalumnoap');
 Route::put('/curso/{id}', 'CursosController@update');
 Route::delete('/curso/destroy/{id}', 'CursosController@destroy');
 Route::post('/cursoalumno/create', 'CursosController@asignarcurso');
-Route::get('/cursosalumno/{id}', 'CursosController@indexcursosalumno');
-
 //Catedraticos Controller
 Route::get('/catedraticos', function () {
     return view('admin.catedraticos.catedraticos');
@@ -35,6 +34,7 @@ Route::post('/catedratico/create', 'CatedraticosController@store');
 Route::get('/catedraticosl', 'CatedraticosController@indexcatedraticos');
 Route::put('/catedratico/{id}', 'CatedraticosController@update');
 Route::delete('/catedratico/destroy/{id}', 'CatedraticosController@destroy');
+Route::post('/notacurso/create', 'CatedraticosController@storenotas');
 
 //Fichas Controller
 Route::get('/fichas', function () {
@@ -44,6 +44,7 @@ Route::get('/fichas', function () {
 //AlumnosController
 Route::post('/alumno/create', 'AlumnosController@store');
 Route::get('/alumnos', 'AlumnosController@indexalumnos');
+Route::get('/alumnos/{id}', 'AlumnosController@indexalumnosnota');
 Route::put('/alumno/{id}', 'AlumnosController@update');
 Route::delete('/alumno/destroy/{id}', 'AlumnosController@destroy');
 

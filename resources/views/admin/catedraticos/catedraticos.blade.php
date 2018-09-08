@@ -98,18 +98,19 @@
     {{-- Actulizar notas --}}
         <div id="modalAyuda" ng-if="verNotas">
             <div class="head_ayuda">
-                <p>Actulizar notas alumnos de Alejandro</p>
+                <p>Actulizar Notas</p>
                 <div class="icocerrarc" ng-click="cerrarCurso()">X</div>
             </div>
 
 
             <div class="form_registro">
                 <div class="form_container">
-                    <form class="form_alumno" name="frm" ng-submit="guardarAlumno()">
+                    <form class="form_alumno" name="frm" ng-submit="guardarNota()">
+
                         <div class="form-group">
                             <select class="custom-select"
                                     name="alumno"
-                                    ng-model="nota.alumno">
+                                    ng-model="alumno.nota">
                                 <option selected disabled value="">Selecciona el alumno</option>
                                 <option ng-repeat="alumno in alumnos" value="@{{alumno.id}}">
                                     @{{alumno.nombre}}
@@ -120,16 +121,16 @@
                         <div class="form-group">
                             <select class="custom-select"
                                     name="curso"
-                                    ng-model="nota.curso">
+                                    ng-model="alumno.curso">
                                 <option selected disabled value="">Seleccione el curso</option>
                                 <option ng-repeat="curso in cursos" value="@{{curso.id}}">
-                                    @{{curso.nombre}}
+                                    @{{curso.nombre_curso}}
                                 </option>
                             </select>
                         </div>
 
                         <div class="form-group col-sm-12 spd spi">
-                            <input type="number" class="form-control" name="notaalumno" placeholder="Nota del alumno" ng-model="nota.notaalumno">
+                            <input type="number" class="form-control" name="notaalumno" placeholder="Nota del alumno" ng-model="alumno.notaalumno">
                         </div>
 
                         <div class="col-sm-12 col-xs-12 mtop">
@@ -172,7 +173,7 @@
                         <td>@{{catedratico.email}}</td>
                         <td>
                             <div class="cont_btnoptions">
-                                <button type="button" class="btn btn-outline-dark" ng-click="asignarCurso()">Notas</button>
+                                <button type="button" class="btn btn-outline-dark" ng-click="asignarCurso(catedratico)">Notas</button>
                                 <button type="button" class="btn btn-outline-info" ng-click="editarCate(catedratico)">Editar</button>
                                 <button type="button" class="btn btn-outline-danger" ng-click="btn_eliminar(catedratico.id)">Eliminar</button>
                             </div>

@@ -55,6 +55,31 @@ app.controller('CatedraticosCtrl', function($scope, $http, $timeout, $log) {
     }
     $scope.get_catedraticos();
 
+    //Todos los alumnos
+    $scope.get_alumnos = function() {
+        $http.get('/alumnos').success(
+
+            function(alumnos) {
+                $scope.alumnos = alumnos.datos;
+            }).error(function(error) {
+            $scope.error = error;
+        });
+    }
+    $scope.get_alumnos();
+
+    $scope.get_cursos = function() {
+        $http.get('/cursosl').success(
+
+            function(cursos) {
+                $scope.cursos = cursos.datos;
+                console.log($scope.cursos);
+            }).error(function(error) {
+            $scope.error = error;
+        });
+    }
+    $scope.get_cursos();
+
+
 
     $scope.actualizarCatedratico = function() {
 
@@ -92,13 +117,37 @@ app.controller('CatedraticosCtrl', function($scope, $http, $timeout, $log) {
           });
     }
 
+    $scope.alumno = {};
+    $scope.guardarNota = function(){
+
+      var datanotas = {
+
+        id_alumno: $scope.alumno.nota,
+        id_curso: $scope.alumno.curso,
+        nota: $scope.alumno.notaalumno,
+        id_catedratico: $scope.existeCatedratico.id
+      }
+
+      console.log(datanotas);
+
+      $http.post('/notacurso/create', datanotas)
+          .success(function(data, status, headers) {
+              console.log("Guardado correctamente");
+
+              $scope.fondoModal = !$scope.fondoModal;
+              $scope.verNotas = !$scope.verNotas;
+          })
+          .error(function(data, status, header, config) {
+              console.log("Error al crear");
+          });
+    }
+
     $scope.editarCatedratico = false;
 
     $scope.editarCate = function(catedratico) {
         $scope.fondoModal = !$scope.fondoModal;
         $scope.editarCatedratico = !$scope.editarCatedratico;
         $scope.existeCatedratico = catedratico;
-        console.log($scope.existeCatedratico);
     };
 
     $scope.cerrarEditcate = function() {
@@ -115,9 +164,11 @@ app.controller('CatedraticosCtrl', function($scope, $http, $timeout, $log) {
 
     $scope.verNotas = false;
 
-    $scope.asignarCurso = function() {
+    $scope.asignarCurso = function(catedratico) {
         $scope.fondoModal = !$scope.fondoModal;
         $scope.verNotas = !$scope.verNotas;
+        $scope.existeCatedratico = catedratico;
+
     };
 
     $scope.cerrarCurso = function() {
@@ -125,32 +176,5 @@ app.controller('CatedraticosCtrl', function($scope, $http, $timeout, $log) {
         $scope.verNotas = !$scope.verNotas;
     };
 
-    $scope.alumnos = [{
-            nombre: 'Alesandro Sanchez',
-            id: '1'
-        },
-        {
-            nombre: 'Pablo Curumaco',
-            id: '2'
-        },
-        {
-            nombre: 'Osman Cruz',
-            id: '3'
-        }
-    ];
-
-    $scope.cursos = [{
-            nombre: 'Mátematicas',
-            id: '1'
-        },
-        {
-            nombre: 'Software',
-            id: '2'
-        },
-        {
-            nombre: 'Razón y Fé',
-            id: '3'
-        }
-    ];
 
 });

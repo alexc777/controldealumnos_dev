@@ -27,4 +27,9 @@ class CursosAlumno extends Model
       * @var array
       */
       protected $hidden = ['updated_at'];
+
+      public function NombreCurso(){
+
+        return $this->hasOne('\App\Models\Cursos','id','id_curso');
+      }
 }

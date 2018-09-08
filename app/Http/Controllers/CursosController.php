@@ -6,12 +6,24 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Cursos;
 use App\Models\CursosAlumno;
+use App\Models\NotasCursoAlumno;
 
 class CursosController extends Controller
 {
 
   public function indexcursos(){
     $cursos = Cursos::orderBy('id', 'desc')->get();
+
+    if (!$cursos) {
+      return response()->json(['mensaje' =>  'No se encontraron registros','codigo'=>404],404);
+    }
+    return response()->json(['datos' =>  $cursos],200);
+
+  }
+
+  public function indexcursosalumnoap($id){
+
+    $cursos = NotasCursoAlumno::where('id_alumno', $id)->with("NombreCurso", "NombreCatedratico")->orderBy('id', 'desc')->get();
 
     if (!$cursos) {
       return response()->json(['mensaje' =>  'No se encontraron registros','codigo'=>404],404);
@@ -54,7 +66,7 @@ class CursosController extends Controller
 
   public function indexcursosalumno($id){
 
-    $cursos = CursosAlumno::where('id_alumno', $id)->orderBy('id', 'desc')->get();
+    $cursos = CursosAlumno::where('id_alumno', $id)->orderBy('id', 'desc')->with("NombreCurso")->get();
 
     if (!$cursos) {
       return response()->json(['mensaje' =>  'No se encontraron registros','codigo'=>404],404);
